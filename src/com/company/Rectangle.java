@@ -8,9 +8,9 @@ public class Rectangle extends Rectangular{
         super(points,centerPoint);
         length = sides[0];
         width = sides[3];
-        calculateArea();
     }
 
+    @Override
     protected void calculateArea(){
         area = length * width;
     }

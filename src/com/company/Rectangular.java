@@ -1,12 +1,11 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Rectangular {
-    private Point[] points;
+    private final Point[] points;
     protected double[] sides = new double[4];
-    private Point centerPoint;
+    private final Point centerPoint;
     protected double perimeter;
     protected double area;
     protected double volume;
@@ -24,14 +23,15 @@ public class Rectangular {
 
         for (int i = 1; i < 4; i++) {
             sidesComparison[i-1] = points[0].distance(points[i]);
-            sidesComparison[i-1] = sidesComparisonNonSorted[i-1];
+            sidesComparisonNonSorted[i-1] = sidesComparison[i-1];
         }
 
         Arrays.sort(sidesComparison);
         int lastPointIndex = Arrays.binarySearch(sidesComparisonNonSorted,sidesComparison[2]);
+        lastPointIndex++;
         Point lastPoint = points[lastPointIndex];
 
-        int sidesLastIndex = 0;
+        int sidesLastIndex;
         for(sidesLastIndex = 0; sidesLastIndex < 2;sidesLastIndex++){
             sides[sidesLastIndex] = sidesComparison[sidesLastIndex];
         }
@@ -56,15 +56,17 @@ public class Rectangular {
     }
 
     public double getArea() {
+        if(area == 0) {
+            calculateArea();
+        }
         return area;
+    }
+
+    protected void calculateArea(){
+
     }
 
     public double getVolume() {
         return volume;
-    }
-    public void showSides(){
-        for (double side: sides) {
-            System.out.println(side);
-        }
     }
 }
