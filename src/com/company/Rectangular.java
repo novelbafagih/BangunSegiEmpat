@@ -58,9 +58,9 @@ public class Rectangular {
             sides[2] = bottomPoint[0].distance(upperPoint[1]);
             sides[3] = bottomPoint[1].distance(upperPoint[0]);
         }
-        calculateTall(upperPoint[0],bottomPoint[0]);
+        calculateTall(upperPoint[0],bottomPoint[0],
+                upperPoint[0].getX() == upperPoint[1].getX());
 
-        Arrays.sort(sides);
     }
 
     private void calculatePerimeter() {
@@ -88,8 +88,10 @@ public class Rectangular {
         return volume;
     }
 
-    private void calculateTall(Point upperPoint, Point lowerPoint){
-
+    private void calculateTall(Point upperPoint, Point lowerPoint, boolean yTallness){
+        tallnes = yTallness ?
+               Math.abs(upperPoint.getX() - lowerPoint.getX()) :
+               Math.abs(upperPoint.getY() - lowerPoint.getY());
     }
 
     public void showSides(){
