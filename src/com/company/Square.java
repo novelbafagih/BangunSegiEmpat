@@ -1,7 +1,7 @@
 package com.company;
 
 public class Square extends Rectangle{
-    private double side;
+    protected double side;
 
     public Square(Point[] points, Point centerPoint) {
         super(points,centerPoint);
