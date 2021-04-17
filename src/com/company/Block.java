@@ -17,4 +17,9 @@ public class Block extends Rectangle{
     protected void calculateVolume(){
         volume = height*length*width;
     }
+
+    @Override
+    protected boolean dimension3() {
+        return true;
+    }
 }

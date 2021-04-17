@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class Rectangular {
     private final Point[] points;
     protected double[] sides = new double[4];
@@ -49,7 +47,6 @@ public class Rectangular {
         sides[0] = bottomPoint[0].distance(bottomPoint[1]);
         sides[1] = upperPoint[0].distance(upperPoint[1]);
 
-        int sidesIndex = 2;
         if(bottomPoint[0].distance(upperPoint[0]) < bottomPoint[0].distance(upperPoint[1])){
             sides[2] = bottomPoint[0].distance(upperPoint[0]);
             sides[3] = bottomPoint[1].distance(upperPoint[1]);
@@ -94,9 +91,7 @@ public class Rectangular {
                Math.abs(upperPoint.getY() - lowerPoint.getY());
     }
 
-    public void showSides(){
-        for (double a:sides) {
-            System.out.println(a);
-        }
+    protected boolean dimension3(){
+        return false;
     }
 }

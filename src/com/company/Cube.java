@@ -14,4 +14,9 @@ public class Cube extends Square{
     protected void calculateVolume(){
         volume = side*side*side;
     }
+
+    @Override
+    protected boolean dimension3() {
+        return true;
+    }
 }
