@@ -19,7 +19,7 @@ public class Block extends Rectangle{
     }
 
     @Override
-    protected boolean dimension3() {
+    public boolean dimension3() {
         return true;
     }
 }

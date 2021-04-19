@@ -1,4 +1,6 @@
-package com.company;
+package com.test;
+
+import com.company.*;
 
 public class Main {
 

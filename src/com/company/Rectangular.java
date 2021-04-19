@@ -91,7 +91,7 @@ public class Rectangular {
                Math.abs(upperPoint.getY() - lowerPoint.getY());
     }
 
-    protected boolean dimension3(){
+    public boolean dimension3(){
         return false;
     }
 }

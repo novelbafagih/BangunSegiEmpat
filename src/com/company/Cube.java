@@ -16,7 +16,7 @@ public class Cube extends Square{
     }
 
     @Override
-    protected boolean dimension3() {
+    public boolean dimension3() {
         return true;
     }
 }
